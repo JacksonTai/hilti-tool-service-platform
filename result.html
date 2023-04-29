@@ -1,20 +1,108 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
+	<title>Simple Website</title>
+	<meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hilti Tool Service Platform</title>
-    <link rel="icon" type="image/x-icon" href="/image/Hilti_Favicon_16x16.ico">
+    <link rel="icon" type="image/x-icon" href="image/Hilti_Favicon_16x16.ico">
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css">
+	<style>
+		.container {
+			margin-top: 100px;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: center;
+			height: 100vh;
+		}
+		img {
+			max-width: 100%;
+			height: auto;
+			display: block;
+			margin: 0 auto;
+            margin-bottom: 20px;
+		}
+		table {
+			width: 100%;
+			border-collapse: collapse;
+		}
+		th, td {
+			padding: 10px;
+			text-align: center;
+			border: 1px solid #ccc;
+		}
+        th {
+			background-color: #D2051E;
+			color: #fff;
+		}
+	</style>
 </head>
 <body>
-    <header class="w-full h-20 shadow-md"></header>
+	<div class="container">
+        <h1 style="text-align: center; font-weight: bold;"><u>Hilti Drill</u></h1><br><br>
+		<img src="image/drilltool.png" alt="placeholder image"><br>
+		<table id="results-table">
+			<thead>
+			  <tr>
+				<th>Parts Name</th>
+				<th>Failure Percentage</th>
+			  </tr>
+			</thead>
+			<tbody>
+			  <!-- Table rows will be added dynamically using JavaScript -->
+			</tbody>
+		  </table>
+	</div>
+
+	<header class="w-full h-20 shadow-md"></header>
     <main class="max-w-screen-2xl m-auto">
        
     </main> 
     <script src="/js/result.js"></script>
+    <script>
+		// Retrieve the console results
+		var results = JSON.parse(localStorage.getItem('result'));
+
+		// Get a reference to the table body
+		var tbody = document.querySelector('#results-table tbody');
+
+		// Loop through the results object and add a row for each item
+		for (var item in results) {
+			// Create a new table row
+			var row = document.createElement('tr');
+
+			// Create a cell for the item name
+			var itemCell = document.createElement('td');
+			itemCell.textContent = item;
+			row.appendChild(itemCell);
+
+			// Create a cell for the percentage
+			var percentageCell = document.createElement('td');
+			percentageCell.textContent = (results[item] * 100).toFixed(2) + '%';
+			row.appendChild(percentageCell);
+
+			// Add the row to the table body
+			tbody.appendChild(row);
+		}
+
+        var buttonElements = document.querySelectorAll('.btn-primary');
+        for (var i = 0; i < buttonElements.length; i++) {
+            buttonElements[i].addEventListener('click', function() {
+                var currentRow = this.parentNode.parentNode;
+                var currentTd = currentRow.getElementsByTagName('td')[0].innerText;
+                var imageElement = document.querySelector('img');
+                if (currentTd === 'Propeller Wear and Tear') {
+                    imageElement.src = 'image/drilltool-propellers.png';
+                } else if (currentTd === 'Drill Anomaly') {
+                    imageElement.src = 'image/ll.png';
+                }
+            });
+        }
+    </script>
 </body>
 </html>
