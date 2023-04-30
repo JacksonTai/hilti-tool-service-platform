@@ -1,68 +1,47 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-	<title>Simple Website</title>
-	<meta charset="UTF-8">
+    <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hilti Tool Service Platform</title>
-    <link rel="icon" type="image/x-icon" href="image/Hilti_Favicon_16x16.ico">
+    <link rel="icon" type="image/x-icon" href="/image/Hilti_Favicon_16x16.ico">
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css">
-	<style>
-		.container {
-			margin-top: 100px;
-			display: flex;
-			flex-direction: column;
-			align-items: center;
-			justify-content: center;
-			height: 100vh;
-		}
-		img {
-			max-width: 100%;
-			height: auto;
-			display: block;
-			margin: 0 auto;
-            margin-bottom: 20px;
-		}
-		table {
-			width: 100%;
-			border-collapse: collapse;
-		}
-		th, td {
-			padding: 10px;
-			text-align: center;
-			border: 1px solid #ccc;
-		}
-        th {
-			background-color: #D2051E;
-			color: #fff;
-		}
-	</style>
 </head>
 <body>
-	<div class="container">
-        <h1 style="text-align: center; font-weight: bold;"><u>Hilti Drill</u></h1><br><br>
-		<img src="image/drilltool.png" alt="placeholder image"><br>
-		<table id="results-table">
-			<thead>
-			  <tr>
-				<th>Parts Name</th>
-				<th>Failure Percentage</th>
-			  </tr>
-			</thead>
-			<tbody>
-			  <!-- Table rows will be added dynamically using JavaScript -->
-			</tbody>
-		  </table>
-	</div>
-
-	<header class="w-full h-20 shadow-md"></header>
-    <main class="max-w-screen-2xl m-auto">
-       
-    </main> 
+	<header class="w-full h-20 shadow-md">
+		<img src="/image/logo.png" class="h-16 ml-10" alt="">
+	</header>
+    <main class="flex items-center justify-center max-w-screen-2xl m-auto mt-14">
+		<section class="flex flex-col justify-center items-center w-3/6 ">
+			<h1 class="text-3xl my-8">Hilti Drill</h1>
+			<img src="image/drilltool.png" usemap="#workmap" alt="placeholder image"><br>
+			<map name="workmap">
+				<area alt="Motor" title="Motor" href="" coords="404,168,120" shape="circle">
+			</map>
+		</section>
+		<section class="flex flex-col">
+			<div class="overflow-x-auto sm:-mx-6 lg:-mx-8">
+				<div class="inline-block min-w-full py-2 sm:px-6 lg:px-8">
+					<div class="overflow-hidden">
+					<table id="results-table" class="min-w-full text-center border">
+						<thead class="border-b bg-red-700 font-medium text-white dark:border-neutral-500">
+						<tr>
+							<th scope="col" class="px-6 py-3 border-r">Parts Name</th>
+							<th scope="col" class="px-6 py-3 border-r">Failure Percentage</th>
+						</tr>
+						</thead>
+						<tbody>
+							<!-- Table rows will be added dynamically using JavaScript -->
+						</tbody>
+					</table>
+					</div>
+				</div>
+			</div>
+		</section>
+    </main>
     <script src="/js/result.js"></script>
 </body>
 </html>

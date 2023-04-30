@@ -1,5 +1,5 @@
 // Retrieve the console results
-const result = JSON.parse(localStorage.getItem('result'));
+let result = JSON.parse(localStorage.getItem('result'));
 
 // Get a reference to the table body
 var tbody = document.querySelector('#results-table tbody');
@@ -8,14 +8,17 @@ var tbody = document.querySelector('#results-table tbody');
 for (var item in result) {
   // Create a new table row
   var row = document.createElement('tr');
+  row.className = "border-b dark:border-neutral-500"
 
   // Create a cell for the item name
   var itemCell = document.createElement('td');
   itemCell.textContent = item;
+  itemCell.className = "whitespace-nowrap px-6 py-2 font-medium border-r"
   row.appendChild(itemCell);
 
   // Create a cell for the percentage
   var percentageCell = document.createElement('td');
+  percentageCell.className = "whitespace-nowrap px-6 py-2 font-medium border-r"
   percentageCell.textContent = (result[item] * 100).toFixed(2) + '%';
   row.appendChild(percentageCell);
 
