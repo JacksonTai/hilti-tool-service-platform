@@ -19,11 +19,23 @@ for (var item in result) {
   // Create a cell for the percentage
   var percentageCell = document.createElement('td');
   percentageCell.className = "whitespace-nowrap px-6 py-2 font-medium border-r"
-  percentageCell.textContent = (result[item] * 100).toFixed(2) + '%';
+  percentageCell.textContent = (result[item].possibility * 100).toFixed(2) + '%';
   row.appendChild(percentageCell);
+  
+  // Create a cell for the detail
+  var detailCell = document.createElement('td');
+  detailCell.textContent = result[item].detail;
+  detailCell.className = "whitespace-nowrap px-6 py-2 font-medium border-r"
+  row.appendChild(detailCell);
 
-  // Add the row to the table body
-  tbody.appendChild(row);
+ // Create a cell for the suggestion
+ var suggestionCell = document.createElement('td');
+ suggestionCell.textContent = result[item].suggestion;
+ suggestionCell.className = "whitespace-nowrap px-6 py-2 font-medium"
+ row.appendChild(suggestionCell);
+
+ // Add the row to the table body
+ tbody.appendChild(row);
 }
 
 var buttonElements = document.querySelectorAll('.btn-primary');
