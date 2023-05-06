@@ -1,4 +1,4 @@
-# hilti_tool_service_platform
+# hilti-tool-service-platform
 
 ## Task
 1) Auto select the highest probability defects when the result page is first loaded.
