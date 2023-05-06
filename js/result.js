@@ -13,12 +13,12 @@ for (var item in result) {
   // Create a cell for the item name
   var itemCell = document.createElement('td');
   itemCell.textContent = item;
-  itemCell.className = "whitespace-nowrap px-6 py-2 font-medium border-r"
+  itemCell.className = "whitespace-nowrap px-6 py-1 font-medium border-r"
   row.appendChild(itemCell);
 
   // Create a cell for the percentage
   var percentageCell = document.createElement('td');
-  percentageCell.className = "whitespace-nowrap px-6 py-2 font-medium border-r"
+  percentageCell.className = "whitespace-nowrap px-6 py-1 font-medium border-r"
   percentageCell.textContent = (result[item].possibility * 100).toFixed(2) + '%';
   if (result[item].is_faulty === 0) {
     percentageCell.style.color = "green";
@@ -30,10 +30,10 @@ for (var item in result) {
 
   // Create a cell for the view button
   var viewCell = document.createElement('td');
-  viewCell.className = "whitespace-nowrap px-6 py-2 font-medium border-r";
+  viewCell.className = "whitespace-nowrap px-6 py-1 font-medium border-r";
   row.appendChild(viewCell);
   var viewButton = document.createElement('button');
-  viewButton.className = "btn btn-primary bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded";
+  viewButton.className = "btn btn-primary bg-blue-500 hover:bg-blue-700 text-white font-bold py-1 px-4 rounded";
   viewButton.textContent = "View";
   
   // Create button onclick event for all part details to be reflected in right container when button is clicked
