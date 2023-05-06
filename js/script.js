@@ -27,7 +27,6 @@ Swal.fire({
     if (result.dismiss) {
       Swal.fire({
         title: 'Scan Result Ready',
-        icon: "info",
         confirmButtonText: 'Predict Defects',
         confirmButtonColor: '#3085d6',
         showLoaderOnConfirm: true,
