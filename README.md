@@ -28,4 +28,4 @@ Follow these steps to install and run the application:
     nodemon index
     ```
 
-4. Start the web server on your local host
+4. Start the web server on your localhost
