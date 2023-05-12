@@ -22,10 +22,15 @@ Follow these steps to install and run the application:
     cd `hilti-tool-service-platform\proxy
     npm install
     ```
-
-3. Start the proxy server using the following commands:
+    
+3. Create a `.env` file in `proxy` folder and add the environment variables for API key:
+    ```
+    AWS_SAGEMAKER_PREDICT_TOOL_PART_DEFECT_ENDPOINT = {your api key}
+    ```
+    
+4. Start the proxy server using the following commands:
     ```
     nodemon index
     ```
 
-4. Start the web server on your localhost
+5. Start the web server on your localhost
