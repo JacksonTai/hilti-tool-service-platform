@@ -1,6 +1,6 @@
 # hilti-tool-service-platform
 
-An in-house web application "Hilti Tool Service Platform (TSP)" built for Hilti, featuring an API endpoint to connect machine learning model in predicting potential defects in tools returned to service center.
+An in-house web application "Hilti Tool Service Platform (TSP)" built for Hilti ITC 2023, featuring an API endpoint to connect machine learning model in predicting potential defects in tools returned to service center.
 
 ## Task
 1) Auto select the highest probability defects when the result page is first loaded.
