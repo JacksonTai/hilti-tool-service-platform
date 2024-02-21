@@ -2,10 +2,6 @@
 
 An in-house web application "Hilti Tool Service Platform (TSP)" built for Hilti ITC 2023, featuring an API endpoint to connect machine learning model in predicting potential defects in tools returned to service center.
 
-## Task
-1) Auto select the highest probability defects when the result page is first loaded.
-2) Add background color to table row when it's being selected.
-
 ## **1. Installation Guide**
 Follow these steps to install and run the application:
 ### Prerequisites
